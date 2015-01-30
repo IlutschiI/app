@@ -2,6 +2,7 @@ package com.wickenhauser.lukas.refreshactivity;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -117,7 +118,13 @@ public class Menu_Settings extends ActionBarActivity {
     }
 
     public void updateColor(){
-        color_prev.setBackground(new ColorDrawable(Color.rgb(red_int,green_int,blue_int)));
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            // only for gingerbread and newer versions
+
+            color_prev.setBackground(new ColorDrawable(Color.rgb(red_int, green_int, blue_int)));
+        }
+        else
+        color_prev.setBackgroundDrawable(new ColorDrawable(Color.rgb(red_int,green_int,blue_int)));
     }
 
     public void onSave(View v){

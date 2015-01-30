@@ -1,6 +1,8 @@
 package com.wickenhauser.lukas.refreshactivity;
 
 
+import android.app.ActivityManager;
+import android.app.IntentService;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -35,6 +37,13 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Wenn Service noch nicht läuft wird er gestartet
+        if (!isMyServiceRunning())
+        {
+
+            Intent i =new Intent(this, NotificationService.class);
+            this.startService(i);
+        }
       //  startService(new Intent(this, NotificationService.class));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -111,6 +120,16 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+
+    private boolean isMyServiceRunning() {
+        ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if ("com.wickenhauser.lukas.refreshactivity.NotificationService".equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     @Override
     protected void onResume() {
