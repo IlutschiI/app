@@ -125,6 +125,7 @@ public class MainActivity extends ActionBarActivity {
         ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
         for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
             if ("com.wickenhauser.lukas.refreshactivity.NotificationService".equals(service.service.getClassName())) {
+
                 return true;
             }
         }

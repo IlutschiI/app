@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.os.Vibrator;
 import android.support.v4.app.NotificationCompat;
 
 
@@ -61,6 +62,7 @@ public class NotificationService extends IntentService {
                 .setContentIntent(pIntent)
                 .setAutoCancel(true)
                 .setLights(c, 1000, 500)
+                .setVibrate(new long[]{1000,350,1000})
                 .setPriority(Notification.PRIORITY_HIGH)
                 ;
         Notification n2 = new NotificationCompat.BigTextStyle(b).bigText("1.D Entfall \n" +
