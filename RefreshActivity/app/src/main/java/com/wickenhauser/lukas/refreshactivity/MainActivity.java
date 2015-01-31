@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -37,6 +38,18 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Repository.getInstance().getList().clear();
+        Repository.getInstance().AddSupplierung(new Supplierung("STUETZ","BUCEK","SYP", "SYP",5,"Betreuung"));
+        Repository.getInstance().AddSupplierung(new Supplierung("STUETZ", "BUCEK", "SYP", "SYP", 7, "Betreuung"));
+        Repository.getInstance().AddSupplierung(new Supplierung("STUETZ","BUCEK","SYP", "SYP",8,"Betreuung"));
+        Repository.getInstance().AddSupplierung(new Supplierung("STUETZ","BUCEK","SYP", "SYP",9,"Betreuung"));
+        Repository.getInstance().AddSupplierung(new Supplierung("KEPL","STOET","D", "NVS",2,"Betreuung"));
+        Repository.getInstance().AddSupplierung(new Supplierung("KEPL","STOET","D", "NVS",2,"Betreuung"));
+        Repository.getInstance().AddSupplierung(new Supplierung("KEPL","STOET","D", "NVS",3,"Betreuung"));
+        Repository.getInstance().AddSupplierung(new Supplierung("KRUEK","","REBW", "-",9,"Entfall"));
+        Repository.getInstance().AddSupplierung(new Supplierung("KREUK","-","REBW", "-",10,"Entfall"));
+        Repository.getInstance().AddSupplierung(new Supplierung("WEGIN","KAIS","RW", "PROG",8,"Betreuung"));
+
         //Wenn Service noch nicht läuft wird er gestartet
         if (!isMyServiceRunning())
         {
@@ -51,6 +64,7 @@ public class MainActivity extends ActionBarActivity {
 
                 // getSupportActionBar().setBackgroundDrawable(new ColorDrawable(android.R.color.holo_purple));
         swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+        swipeLayout.setProgressBackgroundColor(R.color.lightGray);
         swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh()
@@ -96,8 +110,11 @@ public class MainActivity extends ActionBarActivity {
 
 
         lv=(ListView)findViewById(R.id.lvList);
+        lv.addHeaderView(new View(this));
+        lv.addFooterView(new View(this));
         String[] array=new String[]{"item1","item2","item3","item4","item5","item6","item7","item8","item9","item10","item11","item12","item13","item14","item15","item16"};
-        lv.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,array));
+        lv.setAdapter(new SupplierungsAdapter(this,0,Repository.getInstance().getList()));
+        //lv.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,array));
         lv.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
