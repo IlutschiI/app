@@ -32,7 +32,14 @@ public class NotificationService extends IntentService {
         registerReceiver(receiver,new IntentFilter(MainActivity.BROADCAST_COLOR));
         registerReceiver(receiveNewNotification,new IntentFilter(MainActivity.BROADCAST_Notif));
         sendNotification();
-        while(true){}
+        try {
+            while(true) {
+                Thread.currentThread().sleep(10000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 
     BroadcastReceiver receiver = new BroadcastReceiver() {

@@ -6,5 +6,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_menu__settings">Menu_Settings</string>
     <string name="title_activity_stundenplan">Stundenplan</string>
+    <string name="title_activity_stundenplan2">Stundenplan2</string>
+    <string name="title_activity_stundenplan3">Stundenplan3</string>
+    <string name="title_activity_stundenplan4">Stundenplan4</string>
 
 </resources>

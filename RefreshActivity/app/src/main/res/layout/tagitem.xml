@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/MyBlue">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/tv_mon"
+        android:layout_gravity="center_vertical"
+        android:textColor="#ffffffff"
+        android:paddingRight="50dp"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/tv_dien"
+        android:layout_gravity="center_vertical"
+        android:textColor="#ffffffff"
+        android:paddingRight="50dp"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/tv_mint"
+        android:layout_gravity="center_vertical"
+        android:textColor="#ffffffff"
+        android:paddingRight="50dp"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/tv_donn"
+        android:layout_gravity="center_vertical"
+        android:textColor="#ffffffff"
+        android:paddingRight="50dp"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/tv_frei"
+        android:layout_gravity="center_vertical"
+        android:textColor="#ffffffff"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="5dp" />
+</LinearLayout>

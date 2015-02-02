@@ -176,6 +176,11 @@ public class MainActivity extends ActionBarActivity {
             startActivityForResult(i, 420);
         }
 
+        else
+        {
+            Intent i = new Intent(this, Stundenplan.class);
+           startActivity(i);
+        }
         return super.onOptionsItemSelected(item);
     }
 
