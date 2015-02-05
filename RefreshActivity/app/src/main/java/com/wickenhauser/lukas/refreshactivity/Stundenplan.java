@@ -128,7 +128,7 @@ public class Stundenplan extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Toast.makeText(this,String.valueOf(((TextView) findViewById(R.id.textView6)).getWidth()),Toast.LENGTH_LONG).show();
+            //Toast.makeText(this,String.valueOf(((TextView) findViewById(R.id.textView6)).getWidth()),Toast.LENGTH_LONG).show();
         }
 
         return super.onOptionsItemSelected(item);

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.LinkedList;
@@ -40,6 +41,7 @@ public class StundenplanAdapter extends ArrayAdapter<Stunden> {
                     fach.setText(list.get(position).getFach());
                     raum.setText(list.get(position).getRaum());
                     lehrer.setText(list.get(position).getLehrer());
+                    Toast.makeText(c,String.valueOf(raum.getTextSize()),Toast.LENGTH_LONG).show();
                     row.setBackgroundDrawable(new ColorDrawable(Color.rgb(187, 222, 251)));
                 }
                 else
