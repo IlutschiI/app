@@ -28,10 +28,10 @@ public class StundenplanHeaderAdapter extends ArrayAdapter<Stunden> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = c.getLayoutInflater();
-        View row=inflater.inflate(R.layout.stunden_item,null);
-        TextView lehrer=(TextView)row.findViewById(R.id.tv_Lehrer);
-        TextView raum=(TextView)row.findViewById(R.id.tv_Raum);
-        TextView fach=(TextView)row.findViewById(R.id.tv_Fach);
+        View row=inflater.inflate(R.layout.tagitem3,null);
+       //  raum.setVisibility(View.GONE);
+       // lehrer.setVisibility(View.GONE);
+        TextView fach=(TextView)row.findViewById(R.id.tv_day);
 
                 fach.setText(list.get(position).getFach());
                 fach.setTextColor(Color.WHITE);
